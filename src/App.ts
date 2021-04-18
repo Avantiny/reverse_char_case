@@ -4,6 +4,7 @@ const ALPHANUMERIC = new RegExp('^[a-zA-Z0-9]*$')
 const NS_PER_SEC = 1e9
 
 const validateArgv = (argv: string[]) => {
+  console.log(argv)
   if (argv.length > 3) throw new Error('Too many parameters given, give only one parameter!')
   if (!ALPHANUMERIC.test(argv[2])) throw new Error('Non-alphanumeric arguments given!')
 }

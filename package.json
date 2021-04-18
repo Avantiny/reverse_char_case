@@ -6,7 +6,7 @@
   "scripts": {
     "str": "tsc && node src/app.ts",
     "run": "ts-node src/App.ts",
-    "test": "mocha || true"
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
   },
   "author": "Dominik Kuře",
   "license": "ISC",
