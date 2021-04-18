@@ -40,3 +40,5 @@ const main = () => {
 }
 
 main()
+
+module.exports = { processData, constructJSON }
