@@ -14,7 +14,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "experimentalDecorators": true,
     "noEmit": true,
     "jsx": "react-jsx",
@@ -29,5 +29,5 @@
   },
   "include": [
     "src"
-, "App.ts"  ]
+, "src/App.ts"  ]
 }
