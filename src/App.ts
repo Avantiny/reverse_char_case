@@ -1,4 +1,12 @@
-import fs from 'fs'
+var fs = require('fs')
+
+const checkInput = (input: any) => {
+  if (typeof input === 'string') {
+    return getAns(input)
+  } else {
+    throw 'Parameter is not a number!'
+  }
+}
 
 const getAns = (str: string) => {
   return str
@@ -11,9 +19,13 @@ const getAns = (str: string) => {
 }
 
 const main = () => {
-  getAns('Hello World')
-  // eslint-disable-next-line no-console
-  console.log(getAns('Hello World'))
+  const out = checkInput('false')
+  try {
+    fs.writeFileSync('Output.json', out)
+  } catch (e) {
+    console.error(e)
+  }
+  console.log(out)
 }
 
 main()

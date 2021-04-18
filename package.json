@@ -6,6 +6,7 @@
   "scripts": {
     "st": "nodemon src/App.ts",
     "str": "tsc && node src/app.ts",
+    "run" : "ts-node src/App.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dominik Kuře",
