@@ -1,31 +1,32 @@
 var fs = require('fs')
 
-const checkInput = (input: any) => {
-  if (typeof input === 'string') {
-    return getAns(input)
-  } else {
-    throw 'Parameter is not a number!'
-  }
+const ALPHANUMERIC = new RegExp('^[a-zA-Z0-9]*$')
+
+const validateArgv = (argv: string[]) => {
+  if (argv.length > 3) throw new Error('Too many parameters given, give only one parameter!')
+  if (!ALPHANUMERIC.test(argv[2])) throw new Error('Non-alphanumeric arguments given!')
 }
 
-const getAns = (str: string) => {
+const processData = (str: string) => {
   return str
     .split('')
-    .map((chr: string) => {
-      return chr === chr.toUpperCase() ? chr.toLowerCase() : chr.toUpperCase()
-    })
+    .map(chr => (chr === chr.toUpperCase() ? chr.toLowerCase() : chr.toUpperCase()))
     .reverse()
     .join('')
 }
 
+const constructJSON = () => {}
+
 const main = () => {
-  const out = checkInput('false')
+  const time = process.hrtime()
+  const argv = process.argv
+  validateArgv(argv)
+  const processedData = processData(argv[2])
   try {
-    fs.writeFileSync('Output.json', out)
+    fs.writeFileSync('processed.json', processedData)
   } catch (e) {
     console.error(e)
   }
-  console.log(out)
 }
 
 main()
