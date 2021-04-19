@@ -4,8 +4,7 @@
   "description": "Package for ADACTA assignment",
   "main": "index.js",
   "scripts": {
-    "str": "tsc && node src/app.ts",
-    "run": "ts-node src/App.ts",
+    "run": "ts-node src/main.ts",
     "test": "mocha -r ts-node/register 'tests/**/*.ts'"
   },
   "author": "Dominik Kuře",

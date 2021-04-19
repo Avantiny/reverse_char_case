@@ -1,4 +1,5 @@
-var fs = require('fs')
+import { processData } from './processData'
+import fs from 'fs'
 
 const ALPHANUMERIC = new RegExp('^[a-zA-Z0-9]*$')
 const MS_PER_SEC = 1e3
@@ -10,17 +11,10 @@ const validateArgv = (argv: string[]) => {
   if (!argv[2]) throw new Error('No parameter given!')
 }
 
-const processData = (str: string) => {
-  return str
-    .split('')
-    .map(chr => (chr === chr.toUpperCase() ? chr.toLowerCase() : chr.toUpperCase()))
-    .reverse()
-    .join('')
-}
-
 const nanosecToMilisec = (time: [number, number]) => {
   return time[0] * MS_PER_SEC + time[1] * NS_PER_MS
 }
+
 const main = () => {
   const timeStart = process.hrtime()
   const argv = process.argv
@@ -41,6 +35,4 @@ const main = () => {
   }
 }
 
-//main()
-
-export default { processData, validateArgv, nanosecToMilisec }
+export default { validateArgv, nanosecToMilisec, main }
