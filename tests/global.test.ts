@@ -10,21 +10,14 @@ describe('processData()', () => {
   })
 })
 describe('validateArgv()', () => {
-  it('Error: Too many parameters given!', () => {
-    let args = ['x', 'y', 'z', 'u']
-    assert.throw(() => cli.validateArgv(args), Error)
-  })
   it('Error: Non-alphanumeric arguments given!', () => {
-    let args = ['x', 'y', '/*!']
-    assert.throw(() => cli.validateArgv(args), Error)
+    assert.throw(() => cli.validateArgv('/*!'), Error)
   })
   it('Error: No parameter given!', () => {
-    let args = ['x', 'y']
-    assert.throw(() => cli.validateArgv(args), Error)
+    assert.throw(() => cli.validateArgv(''), Error)
   })
   it('This should throw no error', () => {
-    let args = ['x', 'y', 'aBcDe123']
-    assert.equal(cli.validateArgv(args), undefined)
+    assert.equal(cli.validateArgv('aBcDe123'), undefined)
   })
 })
 describe('nanosecToMilisec()', () => {
