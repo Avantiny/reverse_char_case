@@ -4,15 +4,14 @@
   "description": "Package for ADACTA assignment",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "clean": "tsc --build --clean",
     "run": "ts-node src/main.ts",
-    "test": "mocha -r ts-node/register 'tests/**/*.ts'"
+    "test": "mocha -r ts-node/register 'tests/**/*.ts' --reporter mochawesome"
   },
   "author": "Dominik Kuře",
   "license": "ISC",
   "dependencies": {
-    "ts-node": "^9.1.1",
-    "ts-node-dev": "^1.1.6",
-    "typescript": "^4.2.4"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.10",
@@ -28,6 +27,10 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
-    "prettier": "^2.2.1"
+    "mochawesome": "^6.2.2",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
   }
 }

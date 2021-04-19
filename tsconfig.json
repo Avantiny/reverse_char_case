@@ -16,7 +16,6 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "experimentalDecorators": true,
-    "noEmit": true,
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "noImplicitReturns": true,
@@ -25,7 +24,14 @@
     "noImplicitAny": true,
     "noUnusedParameters": false,
     "noUnusedLocals": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    // lib settings
+    "removeComments": true,
+    "sourceMap": false,
+    "outDir": "dist",
+    "noEmit": false,
+    "declaration": true
   },
   "include": [
     "src" 

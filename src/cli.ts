@@ -26,6 +26,7 @@ const main = () => {
   }
   const input = argv[2]
   const output = processData(input)
+  console.info(output)
   const duration = process.hrtime(timeStart)
   const durationMS = nanosecToMilisec(duration)
   try {
@@ -35,4 +36,4 @@ const main = () => {
   }
 }
 
-export default { validateArgv, nanosecToMilisec, main }
+export default { validateArgv, nanosecToMilisec, main, ALPHANUMERIC }
