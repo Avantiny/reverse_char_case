@@ -13,3 +13,6 @@ The package should have the following scripts defined:
 Example input: “abCD12”
 
 Example output: “21dcBA”
+
+## Note
+I wanted the app to do more than just fulfill the requirements but I had to have it done by April 19 so I met the deadline. Planned features were making more versions of the processData.ts file and then benchmark test them to figure out which one was faster. Another plan of mine was publishing the package on npm.
