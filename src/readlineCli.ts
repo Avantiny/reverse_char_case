@@ -11,8 +11,7 @@ const rl = readline.createInterface({
 })
 
 export const question = (q: string): Promise<string> => {
-  // @ts-expect-error
-  let response
+  let response: string
 
   rl.setPrompt(q)
   rl.prompt()
@@ -24,7 +23,6 @@ export const question = (q: string): Promise<string> => {
     })
 
     rl.on('close', () => {
-      // @ts-expect-error
       resolve(response)
     })
   })
